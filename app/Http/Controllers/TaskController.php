@@ -5,9 +5,11 @@ namespace App\Http\Controllers;
 use App\Models\Column;
 use App\Models\Task;
 use Illuminate\Http\Request;
+use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 
 class TaskController extends Controller
 {
+    use AuthorizesRequests;
     public function store(Request $request, Column $column)
     {
         $this->authorize('update', $column->board);

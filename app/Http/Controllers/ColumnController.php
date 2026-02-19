@@ -5,9 +5,11 @@ namespace App\Http\Controllers;
 use App\Models\Board;
 use App\Models\Column;
 use Illuminate\Http\Request;
+use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 
 class ColumnController extends Controller
 {
+    use AuthorizesRequests;
     public function store(Request $request, Board $board)
     {
         $this->authorize('update', $board);

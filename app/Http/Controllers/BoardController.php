@@ -4,9 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Models\Board;
 use Illuminate\Http\Request;
+use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 
 class BoardController extends Controller
 {
+    use AuthorizesRequests;
     public function index()
     {
         $boards = auth()->user()->boards()->latest()->get();
@@ -27,6 +29,8 @@ class BoardController extends Controller
 
     public function show(Board $board)
     {
+        // dd($board, $board->columns()->with('tasks')->get());
+        
         $this->authorize('view', $board);
 
         $columns = $board->columns()->with('tasks')->get();
