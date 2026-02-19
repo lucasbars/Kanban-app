@@ -30,7 +30,7 @@ class BoardController extends Controller
     public function show(Board $board)
     {
         // dd($board, $board->columns()->with('tasks')->get());
-        
+
         $this->authorize('view', $board);
 
         $columns = $board->columns()->with('tasks')->get();
