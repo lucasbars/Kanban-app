@@ -2,63 +2,57 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Board;
 use Illuminate\Http\Request;
 
 class BoardController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
-        //
+        $boards = auth()->user()->boards()->latest()->get();
+        return view('boards.index', compact('boards'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'description' => 'nullable|string',
+        ]);
+
+        auth()->user()->boards()->create($request->only('name', 'description'));
+
+        return response()->json(['success' => true]);
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
+    public function show(Board $board)
     {
-        //
+        $this->authorize('view', $board);
+
+        $columns = $board->columns()->with('tasks')->get();
+        return view('boards.show', compact('board', 'columns'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
+    public function update(Request $request, Board $board)
     {
-        //
+        $this->authorize('update', $board);
+
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'description' => 'nullable|string',
+        ]);
+
+        $board->update($request->only('name', 'description'));
+
+        return response()->json(['success' => true]);
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
+    public function destroy(Board $board)
     {
-        //
-    }
+        $this->authorize('delete', $board);
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
+        $board->delete();
+
+        return response()->json(['success' => true]);
     }
 }

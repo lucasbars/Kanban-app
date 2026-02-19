@@ -2,63 +2,49 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Board;
+use App\Models\Column;
 use Illuminate\Http\Request;
 
 class ColumnController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
-    public function index()
+    public function store(Request $request, Board $board)
     {
-        //
+        $this->authorize('update', $board);
+
+        $request->validate([
+            'name' => 'required|string|max:255',
+        ]);
+
+        $order = $board->columns()->count();
+
+        $board->columns()->create([
+            'name' => $request->name,
+            'order' => $order,
+        ]);
+
+        return response()->json(['success' => true]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
+    public function update(Request $request, Column $column)
     {
-        //
+        $this->authorize('update', $column->board);
+
+        $request->validate([
+            'name' => 'required|string|max:255',
+        ]);
+
+        $column->update($request->only('name'));
+
+        return response()->json(['success' => true]);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
+    public function destroy(Column $column)
     {
-        //
-    }
+        $this->authorize('update', $column->board);
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
-    }
+        $column->delete();
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
+        return response()->json(['success' => true]);
     }
 }
