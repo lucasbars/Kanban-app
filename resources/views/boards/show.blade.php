@@ -11,7 +11,8 @@
                 <small class="text-muted">{{ $columns->count() }} coluna(s)</small>
             </div>
         </div>
-        <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#modalNovaColuna">
+        <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#modalColuna"
+            onclick="abrirModalColuna()">
             <i class="bi bi-plus-lg me-1"></i> Nova Coluna
         </button>
     </div>
@@ -30,6 +31,10 @@
                             title="Adicionar task">
                             <i class="bi bi-plus-lg"></i>
                         </button>
+                        <button class="column-action-btn btn-edit-column" data-column-id="{{ $column->id }}"
+                            data-name="{{ $column->name }}" title="Editar coluna">
+                            <i class="bi bi-pencil"></i>
+                        </button>
                         <button class="column-action-btn btn-delete-column" data-column-id="{{ $column->id }}"
                             title="Excluir coluna">
                             <i class="bi bi-trash"></i>
@@ -42,9 +47,16 @@
                         <div class="task-card" id="task-{{ $task->id }}" data-task-id="{{ $task->id }}">
                             <div class="d-flex justify-content-between align-items-start">
                                 <span class="task-title">{{ $task->title }}</span>
-                                <button class="task-delete-btn btn-delete-task" data-task-id="{{ $task->id }}">
-                                    <i class="bi bi-x"></i>
-                                </button>
+                                <div class="d-flex gap-1">
+                                    <button class="task-delete-btn btn-edit-task" data-task-id="{{ $task->id }}"
+                                        data-column-id="{{ $column->id }}" data-title="{{ $task->title }}"
+                                        data-description="{{ $task->description }}">
+                                        <i class="bi bi-pencil"></i>
+                                    </button>
+                                    <button class="task-delete-btn btn-delete-task" data-task-id="{{ $task->id }}">
+                                        <i class="bi bi-x"></i>
+                                    </button>
+                                </div>
                             </div>
                             @if ($task->description)
                                 <p class="task-desc mb-0">{{ $task->description }}</p>
@@ -67,15 +79,16 @@
         @endif
     </div>
 
-    <!-- Modal Nova Coluna -->
-    <div class="modal fade" id="modalNovaColuna" tabindex="-1">
+    <!-- Modal Coluna (criar e editar) -->
+    <div class="modal fade" id="modalColuna" tabindex="-1">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">Nova Coluna</h5>
+                    <h5 class="modal-title" id="modalColunaTitulo">Nova Coluna</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                 </div>
                 <div class="modal-body p-4">
+                    <input type="hidden" id="column-id">
                     <div class="mb-3">
                         <label class="form-label">Nome</label>
                         <input type="text" class="form-control" id="column-name" placeholder="Ex: Em andamento">
@@ -83,25 +96,27 @@
                 </div>
                 <div class="modal-footer">
                     <button class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Cancelar</button>
-                    <button class="btn btn-primary btn-sm" id="btn-salvar-coluna">Criar Coluna</button>
+                    <button class="btn btn-primary btn-sm" id="btn-salvar-coluna">Salvar</button>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Modal Nova Task -->
-    <div class="modal fade" id="modalNovaTask" tabindex="-1">
+    <!-- Modal Task (criar e editar) -->
+    <div class="modal fade" id="modalTask" tabindex="-1">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">Nova Tarefa</h5>
+                    <h5 class="modal-title" id="modalTaskTitulo">Nova Tarefa</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                 </div>
                 <div class="modal-body p-4">
+                    <input type="hidden" id="task-id">
                     <input type="hidden" id="task-column-id">
                     <div class="mb-3">
                         <label class="form-label">Título</label>
-                        <input type="text" class="form-control" id="task-title" placeholder="Ex: Criar tela de login">
+                        <input type="text" class="form-control" id="task-title"
+                            placeholder="Ex: Criar tela de login">
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Descrição</label>
@@ -110,7 +125,7 @@
                 </div>
                 <div class="modal-footer">
                     <button class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Cancelar</button>
-                    <button class="btn btn-primary btn-sm" id="btn-salvar-task">Criar Tarefa</button>
+                    <button class="btn btn-primary btn-sm" id="btn-salvar-task">Salvar</button>
                 </div>
             </div>
         </div>

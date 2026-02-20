@@ -48,7 +48,7 @@
                 <div class="empty-state text-center py-5">
                     <i class="bi bi-kanban" style="font-size:3rem; color:#d1d5db;"></i>
                     <p class="mt-3 text-muted">Nenhum quadro criado ainda.</p>
-                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalNovoBoard">
+                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalBoard">
                         Criar primeiro quadro
                     </button>
                 </div>
