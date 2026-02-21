@@ -79,7 +79,7 @@ O **Kanban App** é uma aplicação web de gerenciamento de tarefas no estilo Tr
 
 ```bash
 # Clone o repositório
-git clone https://github.com/seu-usuario/kanban-app.git
+git clone https://github.com/lucasbars/kanban-app.git
 cd kanban-app
 
 # Instale as dependências PHP
@@ -209,4 +209,10 @@ users
 
 ---
 
-#### Desenvolvido por Lucas 💜
+## 📝 Licença
+
+Esse projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE.md) para mais detalhes.
+
+---
+
+#### Desenvolvido por Lucas Barbosa 💜
