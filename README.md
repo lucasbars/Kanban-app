@@ -67,7 +67,7 @@ O **Kanban App** é uma aplicação web de gerenciamento de tarefas no estilo Tr
 
 ---
 
-## ⚙️ Como executar
+## 🚀 Como executar
 
 ### Pré-requisitos
 - PHP 8.2+
