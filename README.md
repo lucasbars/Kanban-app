@@ -7,6 +7,7 @@
 <p align="center">
   <a href="#-tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#-projeto">Projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-screenshots">Screenshots</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#-funcionalidades">Funcionalidades</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#-como-executar">Como executar</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#-estrutura">Estrutura</a>
@@ -50,7 +51,7 @@ O **Kanban App** é uma aplicação web de gerenciamento de tarefas no estilo Tr
 
 ---
 
-## 🖥️ Screenshots
+## 📸 Screenshots
 <p align="center">
   <a href=".github/images/login.png" target="_blank">
     <img src=".github/images/login.png" width="32%" alt="Login">
