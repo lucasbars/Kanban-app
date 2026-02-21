@@ -21,13 +21,13 @@ class TaskController extends Controller
 
         $order = $column->tasks()->count();
 
-        $column->tasks()->create([
+        $task = $column->tasks()->create([
             'title' => $request->title,
             'description' => $request->description,
             'order' => $order,
         ]);
 
-        return response()->json(['success' => true]);
+        return response()->json($task);
     }
 
     public function update(Request $request, Task $task)

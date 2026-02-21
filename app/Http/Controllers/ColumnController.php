@@ -20,12 +20,12 @@ class ColumnController extends Controller
 
         $order = $board->columns()->count();
 
-        $board->columns()->create([
+        $column = $board->columns()->create([
             'name' => $request->name,
             'order' => $order,
         ]);
 
-        return response()->json(['success' => true]);
+        return response()->json($column);
     }
 
     public function update(Request $request, Column $column)
