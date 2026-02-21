@@ -11,7 +11,12 @@ class BoardController extends Controller
     use AuthorizesRequests;
     public function index()
     {
-        $boards = auth()->user()->boards()->latest()->get();
+        if (auth()->user()->hasRole('admin')) {
+            $boards = \App\Models\Board::latest()->get();
+        } else {
+            $boards = auth()->user()->boards()->latest()->get();
+        }
+
         return view('boards.index', compact('boards'));
     }
 

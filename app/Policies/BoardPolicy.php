@@ -9,16 +9,19 @@ class BoardPolicy
 {
     public function view(User $user, Board $board): bool
     {
+        if ($user->hasRole('admin')) return true;
         return $user->id === $board->user_id;
     }
 
     public function update(User $user, Board $board): bool
     {
+        if ($user->hasRole('admin')) return true;
         return $user->id === $board->user_id;
     }
 
     public function delete(User $user, Board $board): bool
     {
+        if ($user->hasRole('admin')) return true;
         return $user->id === $board->user_id;
     }
 }

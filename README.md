@@ -1,59 +1,212 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+<h1 align="center">
+    <img alt="Kanban App" title="Kanban App" src="public/img/logo.png" width="120"/>
+    <br>
+    Kanban App
+</h1>
 
 <p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
+  <a href="#-tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-projeto">Projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-funcionalidades">Funcionalidades</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-como-executar">Como executar</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-estrutura">Estrutura</a>
 </p>
 
-## About Laravel
+<p align="center">
+  <img alt="PHP Version" src="https://img.shields.io/badge/PHP-8.5-777BB4?logo=php&logoColor=white">
+  <img alt="Laravel Version" src="https://img.shields.io/badge/Laravel-12-FF2D20?logo=laravel&logoColor=white">
+  <img alt="PostgreSQL" src="https://img.shields.io/badge/PostgreSQL-Neon-4169E1?logo=postgresql&logoColor=white">
+  <img alt="Bootstrap" src="https://img.shields.io/badge/Bootstrap-5.3-7952B3?logo=bootstrap&logoColor=white">
+  <img alt="jQuery" src="https://img.shields.io/badge/jQuery-3.7-0769AD?logo=jquery&logoColor=white">
+  <img alt="License" src="https://img.shields.io/badge/license-MIT-green">
+</p>
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+<br>
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## 🚀 Tecnologias
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Esse projeto foi desenvolvido com as seguintes tecnologias:
 
-## Learning Laravel
+### Backend
+- [Laravel 12](https://laravel.com/) — Framework PHP para o backend
+- [PHP 8.5](https://www.php.net/) — Linguagem de programação
+- [PostgreSQL](https://www.postgresql.org/) — Banco de dados relacional (hospedado no [Neon](https://neon.tech))
+- [Laravel Breeze](https://laravel.com/docs/starter-kits#laravel-breeze) — Autenticação (login, registro, logout)
+- [Spatie Laravel Permission](https://spatie.be/docs/laravel-permission) — Gerenciamento de roles e permissões
+- [Eloquent ORM](https://laravel.com/docs/eloquent) — Mapeamento objeto-relacional
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+### Frontend
+- [Bootstrap 5.3](https://getbootstrap.com/) — Framework CSS para interface responsiva
+- [jQuery 3.7](https://jquery.com/) — Requisições AJAX dinâmicas
+- [SortableJS](https://sortablejs.github.io/Sortable/) — Drag and drop das tarefas
+- [Bootstrap Icons](https://icons.getbootstrap.com/) — Ícones da interface
+- [Google Fonts (DM Sans)](https://fonts.google.com/specimen/DM+Sans) — Tipografia
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+---
 
-## Laravel Sponsors
+## 💻 Projeto
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+O **Kanban App** é uma aplicação web de gerenciamento de tarefas no estilo Trello, desenvolvida como desafio técnico. Permite que usuários organizem suas tarefas em quadros, colunas e cards, com suporte a drag and drop para mover tarefas entre categorias.
 
-### Premium Partners
+---
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+## ✨ Funcionalidades
 
-## Contributing
+- ✅ Autenticação completa (login, registro, logout)
+- ✅ Sistema de roles com Spatie (`admin` e `user`)
+- ✅ CRUD de Quadros (Boards)
+- ✅ CRUD de Colunas (Categories)
+- ✅ CRUD de Tarefas (Tasks)
+- ✅ Drag and drop de tarefas entre colunas
+- ✅ Ordenação persistida no banco de dados
+- ✅ Operações dinâmicas via AJAX sem recarregar a página
+- ✅ Interface responsiva com Bootstrap
+- ✅ Indicador de loading nas ações
+- ✅ Políticas de acesso (cada usuário acessa apenas os próprios boards)
+- ✅ Admin pode visualizar e gerenciar todos os boards
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+---
 
-## Code of Conduct
+## ⚙️ Como executar
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+### Pré-requisitos
+- PHP 8.2+
+- Composer
+- Node.js e NPM
+- PostgreSQL (ou conta no [Neon](https://neon.tech))
 
-## Security Vulnerabilities
+### Instalação
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+```bash
+# Clone o repositório
+git clone https://github.com/seu-usuario/kanban-app.git
+cd kanban-app
 
-## License
+# Instale as dependências PHP
+composer install
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+# Instale as dependências JS
+npm install && npm run build
+
+# Copie o arquivo de ambiente
+cp .env.example .env
+
+# Gere a chave da aplicação
+php artisan key:generate
+```
+
+### Configuração do banco de dados
+
+No arquivo `.env`, configure sua conexão com o PostgreSQL:
+
+```env
+DB_CONNECTION=pgsql
+DB_HOST=seu-host.neon.tech
+DB_PORT=5432
+DB_DATABASE=neondb
+DB_USERNAME=seu_usuario
+DB_PASSWORD=sua_senha
+```
+
+> ⚠️ Se estiver usando o Neon, utilize a **conexão direta** (sem pooler) para as migrations.
+
+### Migrations e Seeders
+
+```bash
+# Rode as migrations
+php artisan migrate
+
+# Rode o seeder de roles (admin e user)
+php artisan db:seed --class=RoleSeeder
+```
+
+### Executar o servidor
+
+```bash
+php artisan serve
+```
+
+Acesse em `http://127.0.0.1:8000`
+
+### Criar um usuário admin
+
+```bash
+php artisan tinker
+```
+
+```php
+$user = App\Models\User::where('email', 'seu@email.com')->first();
+$user->assignRole('admin');
+```
+
+---
+
+## 📁 Estrutura
+
+```
+kanban-app/
+├── app/
+│   ├── Http/Controllers/
+│   │   ├── BoardController.php
+│   │   ├── ColumnController.php
+│   │   └── TaskController.php
+│   ├── Models/
+│   │   ├── Board.php
+│   │   ├── Column.php
+│   │   ├── Task.php
+│   │   └── User.php
+│   └── Policies/
+│       └── BoardPolicy.php
+├── database/
+│   ├── migrations/
+│   └── seeders/
+│       └── RoleSeeder.php
+├── public/
+│   ├── css/
+│   │   └── app.css
+│   └── js/
+│       ├── boards.js
+│       └── kanban.js
+└── resources/
+    └── views/
+        ├── boards/
+        │   ├── index.blade.php
+        │   └── show.blade.php
+        ├── layouts/
+        │   ├── app.blade.php
+        │   └── guest.blade.php
+        └── auth/
+            ├── login.blade.php
+            └── register.blade.php
+```
+
+---
+
+## 🗄️ Banco de Dados
+
+```
+users
+  └── boards (user_id)
+        └── columns (board_id)
+              └── tasks (column_id)
+```
+
+| Tabela | Campos principais |
+|--------|-----------------|
+| users | name, email, password |
+| boards | name, description, user_id |
+| columns | name, order, board_id |
+| tasks | title, description, order, column_id |
+
+---
+
+## 🔐 Permissões
+
+| Role | Permissões |
+|------|-----------|
+| `admin` | Ver e gerenciar todos os boards |
+| `user` | Gerenciar apenas os próprios boards |
+
+---
+
+#### Desenvolvido por Lucas 💜
