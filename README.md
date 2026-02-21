@@ -62,6 +62,7 @@ O **Kanban App** é uma aplicação web de gerenciamento de tarefas no estilo Tr
     <img src=".github/images/board.png" width="32%" alt="Board">
   </a>
 </p>
+
 ## ✨ Funcionalidades
 
 - ✅ Autenticação completa (login, registro, logout)
